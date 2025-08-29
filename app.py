@@ -1,4 +1,5 @@
 import os
+import time
 from flask import Flask, request, abort
 from linebot import LineBotApi, WebhookHandler
 from linebot.exceptions import InvalidSignatureError
@@ -43,6 +44,7 @@ def handle_message(event):
     user_message = event.message.text
     reply_message = user_message[7:-5]
     line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
+    time.sleep(1)
     line_bot_api.reply_message(event.reply_token, TextSendMessage(text="ﾊｯ!(；´Д｀)"))
 
 
