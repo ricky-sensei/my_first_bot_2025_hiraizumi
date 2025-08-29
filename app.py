@@ -43,6 +43,7 @@ def handle_message(event):
     user_message = event.message.text
     reply_message = user_message[7:-5]
     line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_message))
+    line_bot_api.reply_message(event.reply_token, TextSendMessage(text="ﾊｯ!(；´Д｀)"))
 
 
 if __name__ == "__main__":
